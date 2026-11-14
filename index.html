@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maria Eduarda — Videomaker • Storymaker • Comunicadora</title>
+<meta name="description" content="Maria Eduarda: produção de vídeos, cobertura de casamentos e eventos em Stories e apresentação de eventos. Solicite um orçamento.">
+<meta property="og:title" content="Maria Eduarda — Videomaker • Storymaker • Comunicadora">
+<meta property="og:description" content="Transformo momentos, ideias e experiências em conteúdos que despertam emoções.">
+<meta property="og:image" content="img/duda-capa.webp">
+<meta name="theme-color" content="#1F1F1F">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23B07B78'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='30' fill='%23fff' text-anchor='middle' font-style='italic'%3EME%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --rose:#D8A7A1; --rose-deep:#B07B78; --cocoa:#6B4E4A; --cream:#EDE7E3; --ink:#1F1F1F;
+    --paper:#F7F2EF; --paper-2:#F1E8E4; --line:#E4D8D3; --muted:#7a6a67;
+    --serif:"Playfair Display", Georgia, serif; --sans:"Montserrat", system-ui, sans-serif; --script:"Allura", cursive;
+    --wrap:1160px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:76px}
+  body{font-family:var(--sans);font-weight:400;color:var(--ink);background:var(--paper);line-height:1.7;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:min(var(--wrap),100% - 32px);margin-inline:auto}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15}
+  h2{font-size:clamp(2rem,4vw,2.7rem)}
+  .lead{color:var(--muted);font-size:.95rem;margin-top:6px}
+  .script{font-family:var(--script);color:var(--rose-deep);font-weight:400}
+
+  /* botões */
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--rose-deep);color:#fff;border:0;border-radius:999px;
+    padding:13px 26px;font:500 .85rem/1 var(--sans);letter-spacing:.02em;cursor:pointer;transition:background .2s, transform .2s}
+  .btn:hover{background:var(--cocoa);transform:translateY(-1px)}
+  .btn svg{width:16px;height:16px;transition:transform .2s}
+  .btn:hover svg{transform:translateX(3px)}
+  .btn-ghost{background:transparent;border:1px solid var(--rose-deep);color:var(--rose-deep)}
+  .btn-ghost:hover{background:var(--rose-deep);color:#fff}
+
+  /* cabeçalho */
+  header{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s, box-shadow .3s}
+  header.solid{background:rgba(247,242,239,.96);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .logo{display:flex;flex-direction:column;line-height:1;color:#fff;transition:color .3s}
+  header.solid .logo{color:var(--ink)}
+  .logo b{font-family:var(--script);font-weight:400;font-size:2.15rem;letter-spacing:.01em}
+  .logo small{font-size:.52rem;letter-spacing:.32em;text-transform:uppercase;margin-top:3px;opacity:.8;padding-left:4px}
+  .menu{display:flex;align-items:center;gap:30px;list-style:none}
+  .menu a{font-size:.8rem;color:rgba(255,255,255,.85);position:relative;padding:6px 0;transition:color .2s}
+  header.solid .menu a{color:var(--ink)}
+  .menu a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(0);transition:transform .25s}
+  .menu a:not(.btn):hover::after,.menu a.ativo::after{transform:scaleX(1)}
+  .menu .btn{padding:10px 20px;color:#fff}
+  .burger{display:none;background:none;border:0;width:42px;height:42px;cursor:pointer;color:#fff}
+  header.solid .burger{color:var(--ink)}
+  .burger span{display:block;width:22px;height:1.5px;background:currentColor;margin:5px auto;transition:transform .3s, opacity .3s}
+
+  /* hero */
+  .hero{position:relative;min-height:100svh;background:radial-gradient(70% 90% at 0% 100%,#3a2a28 0%,var(--ink) 70%);color:#fff;overflow:hidden;display:flex;align-items:center}
+  .hero-foto{position:absolute;right:0;top:0;bottom:0;width:58%}
+  .hero-foto img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;filter:saturate(.9) contrast(1.02)}
+  .hero-foto::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--ink) 0%,var(--ink) 3%,rgba(31,31,31,.65) 24%,rgba(31,31,31,0) 55%),linear-gradient(0deg,rgba(31,31,31,.55),transparent 35%)}
+  .hero .wrap{position:relative;z-index:2;padding:120px 0 90px}
+  .hero-txt{max-width:520px}
+  .kicker{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--rose)}
+  .hero h1{font-size:clamp(2.9rem,6.5vw,4.8rem);margin:16px 0 14px}
+  .papeis{font-size:clamp(.95rem,1.6vw,1.1rem);font-weight:500;letter-spacing:.02em}
+  .papeis i{font-style:normal;color:var(--rose);margin:0 10px}
+  .hero p.frase{margin:24px 0 34px;color:rgba(255,255,255,.82);font-weight:300;font-size:1.02rem;max-width:440px}
+  .scroll-hint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:2;width:22px;height:36px;border:1.5px solid rgba(255,255,255,.6);border-radius:12px}
+  .scroll-hint::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:#fff;animation:rolar 1.8s infinite}
+  @keyframes rolar{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
+
+  section{padding:clamp(72px,10vw,120px) 0}
+
+  /* sobre */
+  .sobre{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(36px,7vw,90px);align-items:center}
+  .sobre-foto{position:relative}
+  .sobre-foto img{aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;width:100%;border-radius:4px;box-shadow:0 30px 60px -30px rgba(107,78,74,.55)}
+  .sobre-foto::before{content:"";position:absolute;inset:-18px 18px 18px -18px;border:1px solid var(--rose);border-radius:4px;z-index:-1}
+  .sobre .script.oi{font-size:2.2rem;display:block;margin-bottom:-4px}
+  .sobre h2{margin-bottom:22px}
+  .sobre p{color:#4a3f3d;margin-bottom:16px;font-size:.98rem}
+  .sobre .assin{font-size:clamp(1.8rem,3vw,2.3rem);margin-top:22px;display:block}
+  .sobre .assin + hr{width:54px;border:0;border-top:1px solid var(--rose-deep);margin-top:6px}
+
+  /* serviços */
+  .servicos{background:var(--paper-2)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:38px 30px 34px;transition:transform .3s, box-shadow .3s, border-color .3s}
+  .card:hover{transform:translateY(-6px);box-shadow:0 24px 40px -28px rgba(107,78,74,.5);border-color:var(--rose)}
+  .card svg{width:40px;height:40px;stroke:var(--rose-deep);fill:none;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{font-size:1.45rem;margin:24px 0 12px}
+  .card p{color:var(--muted);font-size:.9rem}
+
+  /* portfólio */
+  .port-top{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+  .filtros{display:flex;gap:8px;flex-wrap:wrap}
+  .filtros button{background:none;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font:500 .75rem var(--sans);color:var(--muted);cursor:pointer;transition:all .2s}
+  .filtros button:hover{border-color:var(--rose-deep);color:var(--rose-deep)}
+  .filtros button.on{background:var(--rose-deep);border-color:var(--rose-deep);color:#fff}
+  .grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-top:36px}
+  .item{position:relative;aspect-ratio:9/14;border-radius:6px;overflow:hidden;cursor:pointer;color:#fff;border:0;text-align:left;font:inherit;
+    background:linear-gradient(160deg,var(--cocoa),var(--ink))}
+  .item img,.item video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .item:hover img,.item:hover video{transform:scale(1.05)}
+  .item img.yt{transform:scale(1.34)} .item:hover img.yt{transform:scale(1.4)} /* corta as faixas pretas da miniatura 4:3 do YouTube */
+  .item::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(20,14,13,.8),transparent 55%)}
+  .item .cat{position:absolute;left:14px;bottom:14px;right:14px;z-index:2;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+  .item .cat small{display:block;font-family:var(--serif);font-size:1rem;letter-spacing:0;text-transform:none;font-weight:400;margin-top:4px}
+  .item .play{position:absolute;top:50%;left:50%;width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:50%;z-index:2;
+    background:rgba(255,255,255,.18);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.5);display:grid;place-items:center;transition:transform .3s}
+  .item:hover .play{transform:scale(1.1)}
+  .item .play svg{width:18px;height:18px;fill:#fff;margin-left:3px}
+  .item.breve{cursor:default}
+  .item.breve .play{opacity:.5}
+  .item.breve::before{content:"em breve";position:absolute;top:14px;right:14px;z-index:2;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;
+    border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:4px 10px}
+  .item .deco{position:absolute;inset:0;opacity:.18;background:repeating-linear-gradient(135deg,transparent 0 22px,rgba(216,167,161,.5) 22px 23px)}
+  .port-cta{text-align:center;margin-top:44px}
+
+  /* depoimentos */
+  .depo{background:var(--paper-2)}
+  .depo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+  .depo blockquote{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:34px 30px 30px;position:relative;display:flex;flex-direction:column}
+  .depo blockquote::before{content:"\201C";font-family:var(--serif);font-size:4rem;line-height:.6;color:var(--rose);display:block;height:30px}
+  .depo blockquote p{font-size:.92rem;color:#4a3f3d;font-style:italic;flex:1}
+  .depo cite{display:block;margin-top:22px;font-style:normal;font-size:.75rem;letter-spacing:.06em;color:var(--rose-deep)}
+
+  /* vamos conversar */
+  .conversar{position:relative;color:#fff;padding:0;overflow:hidden;background:var(--cocoa)}
+  .conversar img{position:absolute;right:0;top:0;height:100%;width:55%;object-fit:cover;object-position:50% 22%}
+  .conversar::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--cocoa) 0%,var(--cocoa) 46%,rgba(107,78,74,.55) 64%,rgba(107,78,74,.15) 100%)}
+  .conversar .wrap{position:relative;z-index:2;padding:clamp(72px,10vw,110px) 0}
+  .conversar .box{max-width:540px}
+  .conversar .script{color:var(--rose);font-size:clamp(3rem,6vw,4.4rem);line-height:1;display:block;margin-bottom:18px}
+  .conversar p{color:rgba(255,255,255,.88);font-weight:300;margin-bottom:14px}
+  .conversar .btn{background:var(--rose);color:var(--ink);margin-top:16px}
+  .conversar .btn:hover{background:#fff}
+
+  /* contato */
+  .contato-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,6vw,80px);align-items:center}
+  .canais{list-style:none;margin-top:34px;display:grid;gap:18px}
+  .canais a{display:flex;align-items:center;gap:18px;padding:6px 0}
+  .canais .ic{flex:none;width:48px;height:48px;border-radius:50%;background:var(--paper-2);border:1px solid var(--line);display:grid;place-items:center;transition:background .2s}
+  .canais a:hover .ic{background:var(--rose)}
+  .canais svg{width:20px;height:20px;stroke:var(--cocoa);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .canais b{display:block;font-weight:500;font-size:.98rem}
+  .canais span{font-size:.78rem;color:var(--muted)}
+  .grato{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:4/5;max-width:420px;justify-self:end;width:100%;
+    background:linear-gradient(160deg,var(--rose) 0%,var(--rose-deep) 55%,var(--cocoa) 100%);display:grid;place-items:center;text-align:center;color:#fff;padding:30px}
+  .grato::before{content:"";position:absolute;inset:16px;border:1px solid rgba(255,255,255,.45);border-radius:4px}
+  .grato .script{color:#fff;font-size:clamp(2.6rem,5vw,3.4rem);line-height:1.05;display:block}
+  .grato svg{width:30px;height:30px;stroke:#fff;fill:none;stroke-width:1.4;margin:18px auto 0}
+
+  /* rodapé */
+  footer{background:var(--ink);color:rgba(255,255,255,.75);padding:40px 0 30px}
+  .rod{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  footer .logo{color:#fff}
+  footer .script{color:var(--rose);font-size:1.7rem}
+  .sociais{display:flex;gap:10px}
+  .sociais a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:grid;place-items:center;transition:all .2s}
+  .sociais a:hover{background:var(--rose-deep);border-color:var(--rose-deep)}
+  .sociais svg{width:17px;height:17px;stroke:#fff;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .copy{border-top:1px solid rgba(255,255,255,.1);margin-top:28px;padding-top:20px;font-size:.72rem;text-align:center;color:rgba(255,255,255,.45)}
+
+  /* whatsapp flutuante */
+  .zap{position:fixed;right:20px;bottom:20px;z-index:40;width:56px;height:56px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 24px -8px rgba(0,0,0,.45);transition:transform .2s}
+  .zap:hover{transform:scale(1.08)}
+  .zap svg{width:28px;height:28px;fill:#fff}
+
+  /* modal de vídeo */
+  .modal{position:fixed;inset:0;z-index:100;background:rgba(15,11,10,.92);display:none;align-items:center;justify-content:center;padding:20px}
+  .modal.aberto{display:flex}
+  .modal .tela{width:min(420px,100%);aspect-ratio:9/16;max-height:86vh;background:#000;border-radius:8px;overflow:hidden}
+  .modal .tela.largo{width:min(960px,100%);aspect-ratio:16/9}
+  .modal iframe,.modal video{width:100%;height:100%;border:0}
+  .modal .fechar{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:none;color:#fff;font-size:1.4rem;cursor:pointer}
+
+  /* animação de entrada */
+  .rev{opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease}
+  .rev.vis{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.rev{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+  /* responsivo */
+  @media (max-width:960px){
+    .cards,.depo-grid{grid-template-columns:1fr}
+    .cards{max-width:520px;margin-inline:auto}
+    .depo-grid{max-width:620px;margin-inline:auto}
+    .contato-grid{grid-template-columns:1fr}
+    .grato{justify-self:start;aspect-ratio:16/10;max-width:none}
+  }
+  @media (max-width:860px){
+    .burger{display:block}
+    .menu{position:fixed;inset:76px 0 auto;flex-direction:column;gap:0;background:var(--paper);padding:10px 16px 24px;box-shadow:0 20px 30px -20px rgba(0,0,0,.3);
+      transform:translateY(-12px);opacity:0;pointer-events:none;transition:all .25s}
+    .menu.aberto{transform:none;opacity:1;pointer-events:auto}
+    .menu li{width:100%;text-align:center}
+    .menu a{color:var(--ink)!important;display:block;padding:14px 0;font-size:.95rem}
+    .menu .btn{display:inline-flex;margin-top:12px;padding:13px 26px;color:#fff!important}
+    header.menu-on{background:var(--paper)}
+    header.menu-on .logo,header.menu-on .burger{color:var(--ink)}
+    header.menu-on .burger span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+    header.menu-on .burger span:nth-child(2){opacity:0}
+    header.menu-on .burger span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+    .hero{align-items:flex-end}
+    .hero-foto{width:100%}
+    .hero-foto::before{background:linear-gradient(0deg,var(--ink) 8%,rgba(31,31,31,.82) 45%,rgba(31,31,31,.15) 70%,rgba(31,31,31,.35) 100%)}
+    .hero .wrap{padding:0 0 84px}
+    .sobre{grid-template-columns:1fr}
+    .sobre-foto{max-width:420px;margin:0 18px 0 18px}
+    .conversar img{width:100%;opacity:.4}
+    .conversar::before{background:linear-gradient(90deg,rgba(107,78,74,.95),rgba(107,78,74,.7))}
+  }
+  @media (max-width:520px){
+    .papeis i{margin:0 6px}
+    .grade{grid-template-columns:repeat(2,1fr);gap:10px}
+    .rod{flex-direction:column;text-align:center}
+  }
+</style>
+</head>
+<body>
+
+<header id="topo">
+  <nav class="wrap nav" aria-label="Principal">
+    <!-- LOGO TEMPORÁRIO: quando a logomarca chegar, trocar este bloco por <img src="img/logo.png" alt="Maria Eduarda"> -->
+    <a href="#inicio" class="logo" aria-label="Maria Eduarda — início">
+      <b>Maria Eduarda</b>
+      <small>vídeo • story • comunicação</small>
+    </a>
+    <button class="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    <ul class="menu" id="menu">
+      <li><a href="#inicio" class="ativo">Início</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#portfolio">Portfólio</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#contato">Contato</a></li>
+      <li><a href="#" class="btn js-orcamento">Orçamento</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-foto"><img src="img/duda-capa.webp" alt="Maria Eduarda sorrindo, segurando o celular em frente ao rosto como uma câmera" fetchpriority="high"></div>
+    <div class="wrap">
+      <div class="hero-txt">
+        <span class="kicker">Imagem • Conteúdo • Pessoas</span>
+        <h1>Maria Eduarda</h1>
+        <div class="papeis">Videomaker<i>|</i>Storymaker<i>|</i>Comunicadora</div>
+        <p class="frase">Transformo momentos, ideias e experiências em conteúdos que despertam emoções, comunicam mensagens e aproximam pessoas.</p>
+        <a href="#" class="btn js-orcamento">Solicite um orçamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <span class="scroll-hint" aria-hidden="true"></span>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="wrap sobre">
+      <div class="sobre-foto rev"><img src="img/duda-sobre.webp" alt="Retrato de Maria Eduarda" loading="lazy"></div>
+      <div class="rev">
+        <span class="script oi">Sobre mim</span>
+        <h2>Oi, sou Maria Eduarda</h2>
+        <p>Sou apaixonada por comunicação, criatividade e por transformar ideias em histórias que merecem ser contadas.</p>
+        <p>Trabalho com produção de vídeos, edição, cobertura de eventos e criação de conteúdo, unindo olhar criativo, autenticidade e comunicação para registrar momentos, valorizar marcas e criar conexões.</p>
+        <p>Acredito que cada história tem algo único a transmitir e meu trabalho é dar vida a ela através de imagens, vídeos e experiências.</p>
+        <span class="script assin">Vamos criar algo incrível juntos?</span>
+        <hr>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="servicos" id="servicos">
+    <div class="wrap">
+      <h2 class="rev">Meus serviços</h2>
+      <p class="lead rev">Cada projeto é pensado de forma única, de acordo com a sua necessidade.</p>
+      <div class="cards">
+        <article class="card rev">
+          <svg viewBox="0 0 40 40"><rect x="11" y="4" width="18" height="32" rx="3"/><path d="M18 31h4"/><circle cx="20" cy="17" r="4"/><path d="M14 9h12"/></svg>
+          <h3>Storymaker</h3>
+          <p>Cobertura de casamentos e eventos em tempo real, com Stories, bastidores e momentos especiais registrados de forma leve e autêntica.</p>
+        </article>
+        <article class="card rev">
+          <svg viewBox="0 0 40 40"><path d="M4 13h22v16H4z"/><path d="M26 18l9-5v16l-9-5"/><circle cx="10" cy="8" r="3"/><circle cx="19" cy="8" r="3"/></svg>
+          <h3>Videomaker</h3>
+          <p>Criação de vídeos para marcas, lojas, empresas e eventos, da captação à edição, transformando ideias em conteúdos que conectam.</p>
+        </article>
+        <article class="card rev">
+          <svg viewBox="0 0 40 40"><rect x="14" y="4" width="12" height="20" rx="6"/><path d="M9 19a11 11 0 0 0 22 0M20 30v6M14 36h12"/></svg>
+          <h3>Comunicadora</h3>
+          <p>Apresentação de eventos, entrevistas e cobertura de ações, aproximando pessoas e marcas por meio de uma comunicação criativa e espontânea.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFÓLIO -->
+  <section id="portfolio">
+    <div class="wrap">
+      <div class="port-top">
+        <div class="rev">
+          <h2>Meu portfólio</h2>
+          <p class="lead">Alguns dos trabalhos que já fazem parte dessa história.</p>
+        </div>
+        <div class="filtros rev" role="tablist" aria-label="Filtrar portfólio"></div>
+      </div>
+      <div class="grade" id="grade"></div>
+      <div class="port-cta rev">
+        <a href="https://www.instagram.com/eduardaa.storymaker/" target="_blank" rel="noopener" class="btn btn-ghost">Ver mais no Instagram <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="depo" id="depoimentos">
+    <div class="wrap">
+      <h2 class="rev">Depoimentos</h2>
+      <p class="lead rev">Palavras de quem já viveu essa experiência.</p>
+      <div class="depo-grid">
+        <blockquote class="rev">
+          <p>Duda, você é muito criativa, comunicativa e muito dedicada! Desde o primeiro contato, demonstrou atenção às nossas ideias e trouxe sugestões que fizeram a diferença no resultado. Uma experiência excelente do início ao fim!</p>
+          <cite>— Cliente</cite>
+        </blockquote>
+        <blockquote class="rev">
+          <p>Mariaaaa, seu trabalho ficou incrível! A qualidade dos vídeos, a criatividade e o cuidado com cada detalhe fizeram toda a diferença. Conseguiu transmitir exatamente a essência do que queríamos.</p>
+          <cite>— Cliente de vídeo</cite>
+        </blockquote>
+        <blockquote class="rev">
+          <p>Maria Eduarda, passando pra te agradecer por todo o carinho com o nosso casamento! ❤️ Ficou tudo lindo demais! Você conseguiu registrar cada detalhe e cada momento de um jeito tão especial. Foi muito bom poder acompanhar tudo pelos stories e ter esses registros pra rever depois. Você fez parte desse dia de uma forma muito especial.</p>
+          <cite>— Noivos, casamento</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- VAMOS CONVERSAR -->
+  <section class="conversar">
+    <img src="img/duda-hero.webp" alt="" loading="lazy">
+    <div class="wrap">
+      <div class="box rev">
+        <span class="script">Vamos conversar?</span>
+        <p>Seja para registrar um momento especial, produzir um vídeo, divulgar sua marca ou dar vida a uma nova ideia, estou pronta para conversar.</p>
+        <p>Me conte o que você tem em mente e vamos construir algo especial juntos.</p>
+        <a href="#" class="btn js-orcamento">Solicite um orçamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <div class="wrap contato-grid">
+      <div class="rev">
+        <h2>Contato</h2>
+        <p class="lead">Estou pronta para tirar suas dúvidas e te ajudar a transformar sua ideia em realidade.</p>
+        <ul class="canais">
+          <li><a href="#" class="js-orcamento">
+            <span class="ic"><svg viewBox="0 0 24 24"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.5-4.3A8.5 8.5 0 1 1 20.5 11.6z"/><path d="M9 8.5c.3 2.8 3.5 6 6.5 6.5l1-1.5-2-1-1 .8c-1-.5-2-1.5-2.5-2.5l.8-1-1-2z"/></svg></span>
+            <div><b>(31) 99404-1797</b><span>Fale comigo no WhatsApp</span></div></a></li>
+          <li><a href="https://www.instagram.com/eduardaa.storymaker/" target="_blank" rel="noopener">
+            <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg></span>
+            <div><b>@eduardaa.storymaker</b><span>Stories e coberturas de eventos</span></div></a></li>
+          <li><a href="https://www.instagram.com/_eduardalimaab/" target="_blank" rel="noopener">
+            <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg></span>
+            <div><b>@_eduardalimaab</b><span>Me acompanhe no Instagram</span></div></a></li>
+          <li><a href="mailto:dudabraga18@hotmail.com">
+            <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6l8.5 7 8.5-7"/></svg></span>
+            <div><b>dudabraga18@hotmail.com</b><span>Envie um e-mail</span></div></a></li>
+        </ul>
+      </div>
+      <div class="grato rev" aria-hidden="true">
+        <div>
+          <span class="script">Gratidão<br>por você aqui!</span>
+          <svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="rod">
+      <a href="#inicio" class="logo"><b>Maria Eduarda</b><small>vídeo • story • comunicação</small></a>
+      <span class="script">Conteúdo que emociona.</span>
+      <div class="sociais">
+        <a href="https://www.instagram.com/eduardaa.storymaker/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg></a>
+        <a href="#" class="js-orcamento" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.5-4.3A8.5 8.5 0 1 1 20.5 11.6z"/></svg></a>
+        <a href="mailto:dudabraga18@hotmail.com" aria-label="E-mail"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6l8.5 7 8.5-7"/></svg></a>
+      </div>
+    </div>
+    <div class="copy">© <span id="ano">2026</span> Maria Eduarda • Videomaker, Storymaker e Comunicadora</div>
+  </div>
+</footer>
+
+<a href="#" class="zap js-orcamento" aria-label="Conversar no WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8 0 1.6 1.2 3.2 1.4 3.4.2.2 2.3 3.6 5.7 5 2.1.9 3 .9 4 .8.7-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Vídeo do portfólio">
+  <button class="fechar" aria-label="Fechar">×</button>
+  <div class="tela" id="tela"></div>
+</div>
+
+<script>
+  // ===== CONFIGURAÇÃO =====
+  const WHATSAPP = "5531994041797";
+  const MSG_ORCAMENTO = "Oi, Duda! Vi seu site e gostaria de solicitar um orçamento.";
+
+  // PORTFÓLIO — os vídeos vêm de uma planilha Google da Duda, publicada na web como CSV
+  // (Arquivo → Compartilhar → Publicar na web → CSV). Colunas: Categoria | Título | Link | Capa (opcional).
+  // Link: YouTube (vídeo/shorts), Instagram (reel/post) ou .mp4. Capa: link de imagem ou do Google Drive (arquivo público).
+  // Enquanto PLANILHA_CSV estiver vazio (ou a planilha não carregar/estiver vazia), aparecem cards "em breve".
+  const PLANILHA_CSV = "";
+  const CATEGORIAS = ["Eventos", "Empresas", "Redes Sociais", "Casamentos", "Publicidade"];
+  let PORTFOLIO = [];
+
+  // ===== WhatsApp =====
+  const linkZap = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(MSG_ORCAMENTO);
+  document.querySelectorAll(".js-orcamento").forEach(a => { a.href = linkZap; a.target = "_blank"; a.rel = "noopener"; });
+
+  // ===== cabeçalho / menu =====
+  const header = document.getElementById("topo"), menu = document.getElementById("menu"), burger = document.querySelector(".burger");
+  const onScroll = () => header.classList.toggle("solid", scrollY > 40);
+  addEventListener("scroll", onScroll, { passive: true }); onScroll();
+  const fecharMenu = () => { menu.classList.remove("aberto"); header.classList.remove("menu-on"); burger.setAttribute("aria-expanded", "false"); };
+  burger.addEventListener("click", () => {
+    const abre = !menu.classList.contains("aberto");
+    menu.classList.toggle("aberto", abre); header.classList.toggle("menu-on", abre); burger.setAttribute("aria-expanded", abre);
+  });
+  menu.querySelectorAll("a").forEach(a => a.addEventListener("click", fecharMenu));
+
+  // link ativo conforme a seção
+  const links = [...menu.querySelectorAll('a[href^="#"]:not(.btn)')];
+  const secoes = links.map(a => document.querySelector(a.getAttribute("href")));
+  const ioAtivo = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) links.forEach(a => a.classList.toggle("ativo", a.getAttribute("href") === "#" + e.target.id));
+  }), { rootMargin: "-45% 0px -50% 0px" });
+  secoes.forEach(s => s && ioAtivo.observe(s));
+
+  // ===== portfólio =====
+  const grade = document.getElementById("grade"), filtros = document.querySelector(".filtros");
+  const playSvg = '<span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>';
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+  function render(cat) {
+    const itens = PORTFOLIO.length ? PORTFOLIO.filter(i => cat === "Todos" || i.cat === cat)
+                                   : CATEGORIAS.filter(c => cat === "Todos" || c === cat).map(c => ({ cat: c, breve: true }));
+    grade.innerHTML = itens.map((it, n) => {
+      const capa = it.capa ? `<img src="${esc(it.capa)}" alt="" loading="lazy">`
+                 : it.tipo === "video" ? `<video src="${esc(it.src)}#t=0.5" muted playsinline preload="metadata"></video>`
+                 : it.tipo === "youtube" ? `<img class="yt" src="https://i.ytimg.com/vi/${esc(it.id)}/hqdefault.jpg" alt="" loading="lazy">`
+                 : '<span class="deco"></span>';
+      return `<button class="item${it.breve ? " breve" : ""}" data-i="${PORTFOLIO.indexOf(it)}" ${it.breve ? 'tabindex="-1" aria-disabled="true"' : ""}>
+        ${capa}${playSvg}<span class="cat">${esc(it.cat)}${it.titulo ? `<small>${esc(it.titulo)}</small>` : ""}</span></button>`;
+    }).join("");
+  }
+  function montarFiltros() {
+    const cats = ["Todos", ...CATEGORIAS.filter(c => !PORTFOLIO.length || PORTFOLIO.some(i => i.cat === c))];
+    filtros.innerHTML = cats.map((c, i) => `<button role="tab" aria-selected="${i === 0}" class="${i === 0 ? "on" : ""}">${esc(c)}</button>`).join("");
+    render("Todos");
+  }
+  filtros.addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    filtros.querySelectorAll("button").forEach(x => { x.classList.toggle("on", x === b); x.setAttribute("aria-selected", x === b); });
+    render(b.textContent);
+  });
+  montarFiltros();
+
+  // --- leitura da planilha ---
+  function lerCSV(txt) { // CSV com aspas, vírgulas e quebras de linha dentro de campos
+    const linhas = []; let lin = [], campo = "", aspas = false;
+    for (let i = 0; i < txt.length; i++) {
+      const c = txt[i];
+      if (aspas) { if (c === '"') { if (txt[i + 1] === '"') { campo += '"'; i++; } else aspas = false; } else campo += c; }
+      else if (c === '"') aspas = true;
+      else if (c === ",") { lin.push(campo); campo = ""; }
+      else if (c === "\n" || c === "\r") { if (c === "\r" && txt[i + 1] === "\n") i++; lin.push(campo); linhas.push(lin); lin = []; campo = ""; }
+      else campo += c;
+    }
+    if (campo || lin.length) { lin.push(campo); linhas.push(lin); }
+    return linhas;
+  }
+  const semAcento = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
+  function urlSegura(s) { try { const u = new URL(s.trim()); return /^https?:$/.test(u.protocol) ? u : null; } catch { return null; } }
+  function capaUrl(s) {
+    const u = urlSegura(s || ""); if (!u) return "";
+    const drive = u.hostname.endsWith("drive.google.com") && (u.pathname.match(/\/d\/([\w-]+)/) || [])[1] || u.searchParams.get("id");
+    return u.hostname.endsWith("drive.google.com") && drive ? `https://drive.google.com/thumbnail?id=${drive}&sz=w800` : u.href;
+  }
+  function itemDaLinha([cat = "", titulo = "", link = "", capa = ""]) {
+    const u = urlSegura(link); if (!u || !cat.trim()) return null;
+    const conhecida = CATEGORIAS.find(c => semAcento(c) === semAcento(cat));
+    const it = { cat: conhecida || cat.trim(), titulo: titulo.trim(), capa: capaUrl(capa) };
+    const h = u.hostname.replace(/^www\.|^m\./, "");
+    if (h === "youtu.be" || h.endsWith("youtube.com")) {
+      const id = h === "youtu.be" ? u.pathname.slice(1) : u.searchParams.get("v") || (u.pathname.match(/\/(?:shorts|embed|live)\/([\w-]+)/) || [])[1];
+      if (!id) return null;
+      return { ...it, tipo: "youtube", id: id.split("/")[0], vertical: u.pathname.includes("/shorts/") };
+    }
+    if (h.endsWith("instagram.com")) return { ...it, tipo: "instagram", url: u.href };
+    if (/\.(mp4|webm|mov)$/i.test(u.pathname)) return { ...it, tipo: "video", src: u.href };
+    return { ...it, tipo: "instagram", url: u.href }; // outro link qualquer: abre em nova aba
+  }
+  if (PLANILHA_CSV) fetch(PLANILHA_CSV, { cache: "no-store" })
+    .then(r => r.ok ? r.text() : Promise.reject(r.status))
+    .then(txt => {
+      const linhas = lerCSV(txt).filter(l => l.some(c => c.trim()));
+      if (linhas.length && /categoria/i.test(semAcento(linhas[0][0] || ""))) linhas.shift(); // cabeçalho
+      const itens = linhas.map(itemDaLinha).filter(Boolean);
+      if (!itens.length) return;
+      itens.forEach(i => { if (!CATEGORIAS.includes(i.cat)) CATEGORIAS.push(i.cat); });
+      PORTFOLIO = itens;
+      montarFiltros();
+    })
+    .catch(e => console.warn("Portfólio: não consegui ler a planilha", e));
+
+  // modal de vídeo
+  const modal = document.getElementById("modal"), tela = document.getElementById("tela");
+  grade.addEventListener("click", e => {
+    const b = e.target.closest(".item"); if (!b || b.classList.contains("breve")) return;
+    const it = PORTFOLIO[+b.dataset.i]; if (!it) return;
+    if (it.tipo === "instagram") { open(it.url, "_blank", "noopener"); return; }
+    tela.classList.toggle("largo", it.tipo === "youtube" && !it.vertical);
+    tela.innerHTML = it.tipo === "youtube"
+      ? `<iframe src="https://www.youtube-nocookie.com/embed/${esc(it.id)}?autoplay=1&rel=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>`
+      : `<video src="${esc(it.src)}" controls autoplay playsinline></video>`;
+    modal.classList.add("aberto");
+  });
+  const fecharModal = () => { modal.classList.remove("aberto"); tela.innerHTML = ""; };
+  modal.addEventListener("click", e => { if (e.target === modal || e.target.classList.contains("fechar")) fecharModal(); });
+  addEventListener("keydown", e => { if (e.key === "Escape") { fecharModal(); fecharMenu(); } });
+
+  // ===== animação de entrada =====
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("vis"); io.unobserve(e.target); } }), { threshold: .12 });
+  document.querySelectorAll(".rev").forEach(el => io.observe(el));
+
+  document.getElementById("ano").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
